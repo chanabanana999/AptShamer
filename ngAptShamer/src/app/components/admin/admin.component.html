@@ -1,0 +1,39 @@
+
+<div  style="padding-top: 55px">
+  <table class="table table-hover table-bordered">
+      <thead class="thead-dark">
+        <th> ID </th>
+        <th> Username </th>
+        <th> Role </th>
+        <th> Active </th>
+        <th>See All Complaints</th>
+      </thead>
+      <tbody *ngFor="let user of users">
+        <td>{{user.id}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.role}}</td>
+        <td>
+            <button class="button" *ngIf="!user.enabled" (click)="makeUserEnabled(user)">Enable User</button>
+            <button class="button" *ngIf="user.enabled" (click)="makeUserDisabled(user)">Disable User</button>
+        </td>
+        <td> <button class="button" (click) ="showAllUserComplaints(user)">Show All Complaints</button></td>
+      </tbody>
+  </table>
+</div>
+<hr>
+
+<div *ngIf="userComplaints">
+  <h4>{{user.username}}</h4>
+  <br>
+  <ul *ngFor="let complaint of userComplaints">
+    <br>
+    <ul>
+
+      <h5>{{complaint.title}}</h5>
+      <li>{{complaint.description}}</li>
+      <li *ngFor="let image of complaint.images">
+        <img src="{{image.imageUrl}}"/>
+      </li>
+    </ul>
+  </ul>
+</div>

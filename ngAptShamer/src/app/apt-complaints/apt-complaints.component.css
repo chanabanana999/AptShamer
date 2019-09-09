@@ -1,0 +1,43 @@
+
+.image-container {
+  position: relative;
+  top: 50px;
+  left: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.image {
+  border: 1px solid rgb(10, 10, 10);
+  width: 400px;
+  height: 300px;
+  display: flex;
+
+}
+
+.complaint-container {
+  margin-right: 120px;
+  position: absolute;
+  top: 50px;
+  left: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.rating {
+  border: 1px solid rgb(10, 10, 10);
+  display: flex;
+  width: 700px;
+  height: 100 px;
+  box-sizing: border-box;
+}
+
+.complaints {
+  border: 1px solid rgb(10, 10, 10);
+  display: flex;
+  width: 700px;
+  box-sizing: border-box;
+}

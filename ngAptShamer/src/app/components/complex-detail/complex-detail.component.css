@@ -1,0 +1,32 @@
+.img-pic-container {
+  display: flex;
+    justify-content: center;
+}
+
+agm-map {
+  height: 400px;
+  width: 400px;
+}
+
+.complex-pic {
+  height: 400px;
+  width: auto;
+}
+
+.contact {
+  text-align: center;
+}
+
+.complaint {
+  margin-left: 30%;
+  margin-right: 30%;
+  text-align: left;
+}
+
+#clickme:hover {
+  background-color: #56ACED;
+}
+
+.btn-create {
+  margin-bottom: 15px;
+}

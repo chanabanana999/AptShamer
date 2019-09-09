@@ -1,0 +1,56 @@
+.complaint {
+  margin-left: 30%;
+  margin-right: 30%;
+  text-align: left;
+}
+
+#comment {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.wrapper {
+  margin-left: 25em;
+  margin-right: 1em;
+  display: grid;
+  grid-template-rows: auto;
+  /* grid-auto-columns: repeat(3, 350px); */
+  grid-template-columns: 33% 33%;
+  /* grid-template-columns: repeat(auto-fit, 300px); */
+  /* grid-template-columns: repeat(2, 1fr); */
+  grid-row-gap: 1em;
+  grid-column-gap: 1em;
+  /* justify-items: center; */
+}
+
+.image {
+  width: 300px;
+  height: 300px;
+  align-self: center;
+}
+
+p {
+  margin-left: 28%;
+  margin-right: 25%;
+  text-align: left;
+  font-size: 100%;
+  font-weight: 400;
+}
+
+#update {
+  font-weight: 500;
+  font-size: 125%;
+  width:70%;
+  margin-left:20%;
+}
+
+#comment{
+  margin-left: 28%;
+  margin-right: 25%;
+  text-align: left;
+  font-size: 100%;
+  font-weight: 400;
+}

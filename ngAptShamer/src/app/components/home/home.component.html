@@ -1,0 +1,38 @@
+
+<div class="bg-container">
+    <div class="content">
+      <h1 style="padding-top: 200px">Apartment Shamer</h1>
+      <form (submit)="search()" style="padding-top: 40px">
+          <p *ngIf="errorM" >{{errorM}}</p>
+          <input size=58 ngx-google-places-autocomplete [options]='options' #placeRef="ngx-places" (onAddressChange)="handleAddressChange($event)" />
+          <button class="button">Search</button>
+      </form>
+      <br>
+  <ngb-carousel *ngIf="images">
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img [src]="images[0]"
+        width="550" alt="first slide">
+      </div>
+
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img [src]="images[1]" width="550" alt="second slide">
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img [src]="images[2]" width="550" alt="third slide">
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img [src]="images[3]" width="550" alt="fourth slide">
+      </div>
+    </ng-template>
+   </ngb-carousel>
+
+</div>
+</div>
+

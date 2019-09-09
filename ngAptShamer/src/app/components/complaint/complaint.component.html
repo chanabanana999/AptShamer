@@ -1,0 +1,74 @@
+<div class="bg-color">
+    <div class="content" style="padding-top: 100px;" *ngIf="editComplaint === null">
+
+    <h4 style="text-align: center">Complaint: {{complaints.title}}</h4>
+    <p>Description of issue:     {{complaints.description}}</p>
+    <p>Was this taken care of?     {{complaints.isResolved ? 'Yes' : 'Not Yet'}}</p>
+    <p>Date resolved:     {{complaints.resolved | date :'shortDate'}}</p>
+    <p>Resolution:     {{complaints.resolution ? complaints.resolution : 'We will find out!'}}</p>
+
+    <div class="wrapper">
+      <div  *ngFor="let pic of complaints.images">
+        <img class="image" src="{{pic.imageUrl}}"/>
+      </div>
+    </div>
+    <br>
+       <h4 style="text-align: center" *ngIf="complaints.comments">Comments on this complaint:</h4>
+       <ul id="comment" *ngFor="let comment of complaints.comments">
+          <li>{{comment.text}}</li>
+     </ul>
+      <div class="center">
+        <button class="button" (click)="delete(complaints.id)" *ngIf="sameUser === true"> Delete </button>
+        <button class="button" (click)="setEdit()" *ngIf="sameUser === true"> Update </button>
+      </div>
+    </div>
+
+    <!-- <div class="content" style="padding-top: 50px">
+    <form id="editComplaint" *ngIf="editComplaint">
+      Complaint: <input type="text" name="title" [(ngModel)]="editComplaint.title"><br>
+      Description of Complaint: <input type="text" name="description" [(ngModel)]="editComplaint.description"><br>
+      Complaint Resolved: <input type="checkbox" name="isResolved" [(ngModel)]="editComplaint.isResolved"><br>
+      <span *ngIf="editComplaint.isResolved">
+        Date Resolved: <input type="date" name="resolved" [(ngModel)]="editComplaint.resolved"><br>
+      </span>
+      Details of Fixed Complaint: <input type="text" name="resolution" [(ngModel)]="editComplaint.resolution"><br>
+      <button (click)="updateComplaint(editComplaint)">Save</button>
+      <button (click)="editComplaint = null;">Cancel</button>
+      <span> {{errorMessageText}} </span>
+    </form>
+  </div> -->
+
+  <div class="content" style="padding-top: 150px">
+      <form id="editComplaint" *ngIf="editComplaint">
+        <h2 style="text-align: center">Update Complaint</h2>
+        <table id="update">
+          <tr>
+            <td align="right">Complaint:</td>
+            <td align="left"><input size=50 type="text" name="title" [(ngModel)]="editComplaint.title"></td>
+          </tr>
+          <tr>
+            <td align="right">Description of Complaint:</td>
+            <td align="left"><input size=50 type="text" name="description" [(ngModel)]="editComplaint.description"></td>
+          </tr>
+          <tr>
+            <td align="right">Complaint Resolved:</td>
+            <td align="left"><input type="checkbox" name="isResolved" [(ngModel)]="editComplaint.isResolved"></td>
+          </tr>
+          <tr *ngIf="editComplaint.isResolved">
+            <td align="right">Date Resolved:</td>
+            <td align="left"><input type="date" name="resolved" [(ngModel)]="editComplaint.resolved"></td>
+          </tr>
+          <tr *ngIf="editComplaint.isResolved">
+            <td align="right">Details of Fixed Complaint:</td>
+            <td align="left"><input size=50 type="text" name="resolution" [(ngModel)]="editComplaint.resolution"></td>
+          </tr>
+        </table>
+    <div class="center">
+      <button class="button" (click)="updateComplaint(editComplaint)">Save</button>
+      <button class="button" (click)="editComplaint = null;">Cancel</button>
+    </div>
+    <br>
+    <span class="error"> {{errorMessageText}} </span>
+    </form>
+  </div>
+</div>

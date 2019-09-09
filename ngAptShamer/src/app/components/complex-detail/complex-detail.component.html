@@ -1,0 +1,31 @@
+<div class="bg-color">
+  <div class="complex" style="padding-top: 100px">
+    <h3>{{complex.name}}</h3>
+    {{complex.street}}, {{complex.city}}, {{complex.state}}, {{complex.zip}}<br>
+    Number of units: {{complex.numUnits}}<br><br>
+
+    <div class="contact" *ngFor="let contact of complex.contacts">
+      {{contact.name}}: {{contact.phone}}; {{contact.email}}<br>
+    </div>
+    <br>
+    <div class="img-pic-container">
+        <agm-map [latitude]="lat" [longitude]="long" >
+            <agm-marker [latitude]="lat" [longitude]="long" [label]=""></agm-marker>
+          </agm-map>
+          <img class="complex-pic" width=700 src="{{complex.imageUrl}}"/><br><br>
+    </div>
+    <!-- <h6>(Log in and scroll down to add a complaint)</h6> -->
+    <br>
+    <div class="complaint" *ngFor="let complaint of complex.complaints">
+      <a id="clickme" style="color: blue; text-decoration: underline;" (click)="viewComplaint(complaint.id)">{{complaint.title}}</a><br>
+      Problem description: {{complaint.description}}<br>
+      Date reported: {{complaint.created | date :'shortDate'}}<br>
+      <span *ngIf="complaint.resolved">Date resolved: {{complaint.resolved | date:'shortDate'}}</span>
+      <br><br>
+    </div>
+
+<!-- Create New Complaint Button -->
+    <button class="button btn-create" (click)="createNew()" *ngIf="loggedIn() === true"> Create New Complaint </button>
+  </div>
+</div>
+

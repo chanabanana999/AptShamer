@@ -1,0 +1,12 @@
+<div class="bg-container">
+  <div class="content" id="login" style="padding-top: 200px">
+      <h2>Register</h2>
+      <br>
+      <br>
+      <form id="regForm">
+        <input type="text" name="username" placeholder="username" [(ngModel)]="regForm.username">
+        <input type="password" name="password" placeholder="password" [(ngModel)]="regForm.password">
+      <button type="submit" class="button" (click)="register(regForm)">Register</button>
+      </form>
+    </div>
+</div>
