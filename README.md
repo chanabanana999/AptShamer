@@ -54,4 +54,6 @@
 
 ### Lessons Learned
 
-* Need to ask the team
+* Adopting a lot of new technologies in a week was a stretch! We had to make judgment calls about whether to cut a feature or press through to include it.
+* Google integration took quite a bit of time. It was important to us, so we persevered to make it work.
+* When using Angular on the front end, it was important to use compatible front end templates and tools. Some of the front end did not look as graphically interesting as we would have liked because adding pictures and features kept breaking the navbar. This is something to come back to.
