@@ -9,9 +9,11 @@
 * Kayla Hatle
 
 ### Overview
-
+Aparment Shamer is an application that allows users to browse apartments and complaints that residents have logged. Users can register and log their own complaints, update and resolve them.
+Google location and autocomplete services are included, and users can also add a new complex.
 
 ### How to use
+Users can search on a city or address to view complexes and their complaints. If a use is logged in, they can search or add a complex and add complaints, update or delete them. An administrator can disable a user and delete content. A navbar provides appropriate options based on authentication status and role.
 
 ### REST API Endpoints
 | HTTP Verb | Resource URI                        | Action                               |
